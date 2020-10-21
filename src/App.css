@@ -1,38 +1,209 @@
-.App {
+.App{
+  padding:10px 20px;
+}
+.college_row{
+  margin-top: 20px;
+height: 180px;
+display: flex;
+flex-direction:row;
+justify-content:center;
+}
+.college_tile{
+border-left: 1px solid #CCC;
+border-right: 1px solid #CCC;
+border-bottom: 1px solid #CCC;
+flex-grow:1;
+margin: 0 50px;
+max-width: 400px;
+display: flex;
+flex-direction:column;
+box-shadow: 7px -4px 6px -6px #777;
+}
+/* .college_tile > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+.college_image{
+  flex-grow:2;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.layer {
+  background-color: rgb(10 10 10 / 75%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.tags{
+  position: absolute;
+  bottom: 5px;
+  left:5px;
+
+}
+.tag{
+  font: 8px/8px DINPro;
+  border-radius: 5px;
+  background-color: white;
+  width: fit-content;
+  padding:4px 4px;
+  margin: 2px;
+}
+.ranking{
+  position: absolute;
+  bottom: 5px;
+  right:0;
+  font: 9px/9px DINPro;
+  color: white;
+  padding : 0 5px;
+}
+.ratings{
+  position: absolute;
+  top: 15px;
+  right:5px;
+  font: 9px/9px DINPro;
+  color: white;
+  padding : 5px 5px;
+  background: #f5a626;
+  align-items: center;
+  border-radius: 2px;
+}
+.ratings > p{
+  margin: 0;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.rating_value{
+  font: 12px/7px DINPro !important;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.college_details{
+  flex-grow:1;
   display: flex;
+flex-direction:row;
+}
+.college_loc_details{
+  flex-grow:2;
+}
+.college_loc_details > p{
+  line-height: 1rem;
+  font: 9px/9px DINPro;
+  padding : 0 5px;
+}
+.title{
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+.nearest_metro{
+}
+.nearest_bus{
+  color: #adadad !important;
+}
+.offer_text{
+  background-color: #ccf5e7;
+  border-radius: 0 9px 9px 0;
+  width: fit-content;
+  padding:4px !important;
+  padding-right: 10px !important;
+}
+
+.college_fee_details{
+  flex-grow:2;
+  display: flex;
+  justify-content:right;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: right;
+}
+.college_fee_details > p{
+  margin: 2px;
+  line-height: 1rem;
+  font: 9px/10px DINPro;
+  padding : 0 5px;
+}
+
+.original_fees{
+  text-decoration: line-through;
+  font: 9px/12px DINPro !important;
+}
+.discount{
+  margin: 0;
+  margin-left: 6px;
+  line-height: 1rem;
+  font: 7px/10px DINPro;
+  padding : 0 2px 0 0;
   color: white;
+  box-sizing: border-box;
+  background: #dd1c26;
+  box-shadow: 0px 1px 1pX 0 rgba(0, 0, 0, 0.4);
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.discount::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: -2em;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  border: 2.7px solid black;
+  border-color: transparent transparent #dd1c26 #dd1c26;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+  /* box-shadow: -1px 1px 1px 0 rgba(0, 0, 0, 0.4); */
+}
+.discounted_fees{
+  color: #dd1c26 !important;
+  font-weight: bold !important;
+  font: 16px/15px DINPro !important;
+}
+.fees_cycle{
+  font: 7px/1px DINPro !important;
+}
+.amenties{
+ color: #37b396 !important;
+ font-weight: bold !important;
+ padding: 10px;
+ margin-top: 30px;
+ font: 10px/31px DINPro !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.promoted{
+  margin: 0;
+  margin-left: 9px;
+  line-height: 1rem;
+  font: 12px/18px Roboto;
+  color: white;
+  box-sizing: border-box;
+  background: #68a7ff;
+  box-shadow: 0px 1px 1pX 0 rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top:-8px;
+  right:0px;
+  z-index:200;
+  padding: 0px 10px;
+  height: 16px;
+
+}
+
+.promoted::before,.promoted::after{
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #68a7ff;
+  z-index: 100;
+  left: -2px;
+}
+.promoted::before{
+  transform:skew(50deg);
+  bottom:50%;
+}
+.promoted::after{
+  top: 50%;
+  transform:skew(-50deg);
 }
